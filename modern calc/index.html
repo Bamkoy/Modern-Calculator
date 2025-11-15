@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css">
+  <title>Modern Calculator</title>
+</head>
+<body>
+  <div class="calculator">
+    <div class="display-container">
+      <div id="history"></div>
+      <input type="text" id="display" readonly value="0" />
+    </div>
+
+    <div class="mode-toggle">
+      <button class="mode-btn active" onclick="toggleMode('basic')">Basic</button>
+      <button class="mode-btn" onclick="toggleMode('scientific')">Scientific</button>
+    </div>
+
+    <div class="buttons" id="buttonGrid">
+      <!-- Scientific functions -->
+      <button class="function scientific-row" onclick="appendToDisplay('Math.sin(')">sin</button>
+      <button class="function scientific-row" onclick="appendToDisplay('Math.cos(')">cos</button>
+      <button class="function scientific-row" onclick="appendToDisplay('Math.tan(')">tan</button>
+      <button class="function scientific-row" onclick="appendToDisplay('Math.log(')">log</button>
+      <button class="function scientific-row" onclick="appendToDisplay('Math.sqrt(')">√</button>
+
+      <button class="function scientific-row" onclick="appendToDisplay('Math.PI')">π</button>
+      <button class="function scientific-row" onclick="appendToDisplay('Math.E')">e</button>
+      <button class="function scientific-row" onclick="appendToDisplay('**')">x^y</button>
+      <button class="function scientific-row" onclick="appendToDisplay('Math.abs(')">|x|</button>
+      <button class="function scientific-row" onclick="factorial()">x!</button>
+
+      <!-- Basic calculator -->
+      <button class="clear" onclick="clearDisplay()">C</button>
+      <button class="function" onclick="deleteLast()">⌫</button>
+      <button class="function" onclick="appendToDisplay('(')">(</button>
+      <button class="function" onclick="appendToDisplay(')')">)</button>
+
+      <button class="number" onclick="appendToDisplay('7')">7</button>
+      <button class="number" onclick="appendToDisplay('8')">8</button>
+      <button class="number" onclick="appendToDisplay('9')">9</button>
+      <button class="operator" onclick="appendToDisplay('/')">/</button>
+
+      <button class="number" onclick="appendToDisplay('4')">4</button>
+      <button class="number" onclick="appendToDisplay('5')">5</button>
+      <button class="number" onclick="appendToDisplay('6')">6</button>
+      <button class="operator" onclick="appendToDisplay('*')">×</button>
+
+      <button class="number" onclick="appendToDisplay('1')">1</button>
+      <button class="number" onclick="appendToDisplay('2')">2</button>
+      <button class="number" onclick="appendToDisplay('3')">3</button>
+      <button class="operator" onclick="appendToDisplay('-')">−</button>
+
+      <button class="number" onclick="appendToDisplay('0')">0</button>
+      <button class="number" onclick="appendToDisplay('.')">.</button>
+      <button class="operator" onclick="appendToDisplay('+')">+</button>
+      <button class="function" onclick="toggleSign()">±</button>
+
+      <button class="equals" onclick="calculateResult()">=</button>
+      <button class="function" onclick="percentage()">%</button>
+      <button class="function" onclick="appendToDisplay('**2')">x²</button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
